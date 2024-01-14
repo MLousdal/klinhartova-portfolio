@@ -1,0 +1,127 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"firstname": {
+				"__TYPE__": "FieldContent",
+				"value": "select",
+				"type": "Text"
+			},
+			"lastname": {
+				"__TYPE__": "FieldContent",
+				"value": "car",
+				"type": "Text"
+			},
+			"headline": {
+				"__TYPE__": "FieldContent",
+				"value": "each",
+				"type": "Text"
+			},
+			"skills": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Tempor enim voluptate laboris. Non duis laboris minim occaecat excepteur fugiat cupidatat magna ea adipisicing reprehenderit. Ad consequat ea et proident."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"contactme",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://google.com"
+							}
+						}
+					],
+					[
+						"documents",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io"
+							}
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "caseHero",
+		"primary": {
+			"role": {
+				"__TYPE__": "FieldContent",
+				"value": "detail",
+				"type": "Text"
+			},
+			"duration": {
+				"__TYPE__": "FieldContent",
+				"value": "visit",
+				"type": "Text"
+			},
+			"tools": {
+				"__TYPE__": "FieldContent",
+				"value": "depend",
+				"type": "Text"
+			},
+			"platform": {
+				"__TYPE__": "FieldContent",
+				"value": "north",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "articleHero",
+		"primary": {
+			"word1": {
+				"__TYPE__": "FieldContent",
+				"value": "choice",
+				"type": "Text"
+			},
+			"word2": {
+				"__TYPE__": "FieldContent",
+				"value": "cost",
+				"type": "Text"
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"value": "wolf",
+				"type": "Text"
+			},
+			"cta": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

@@ -1,0 +1,145 @@
+{
+  "id": "hero",
+  "type": "SharedSlice",
+  "name": "Hero",
+  "description": "Hero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "headline": {
+          "type": "Text",
+          "config": {
+            "label": "headline",
+            "placeholder": "Headline"
+          }
+        },
+        "firstname": {
+          "type": "Text",
+          "config": {
+            "label": "firstName",
+            "placeholder": ""
+          }
+        },
+        "lastname": {
+          "type": "Text",
+          "config": {
+            "label": "lastName",
+            "placeholder": ""
+          }
+        },
+        "skills": {
+          "type": "StructuredText",
+          "config": {
+            "label": "skills",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "contactme": {
+          "type": "Link",
+          "config": {
+            "label": "contactme",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "documents": {
+          "type": "Link",
+          "config": {
+            "label": "documents",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    },
+    {
+      "id": "caseHero",
+      "name": "Case Hero",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "role": {
+          "type": "Text",
+          "config": {
+            "label": "Role",
+            "placeholder": ""
+          }
+        },
+        "duration": {
+          "type": "Text",
+          "config": {
+            "label": "Duration",
+            "placeholder": ""
+          }
+        },
+        "tools": {
+          "type": "Text",
+          "config": {
+            "label": "Tools",
+            "placeholder": ""
+          }
+        },
+        "platform": {
+          "type": "Text",
+          "config": {
+            "label": "Platform",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "articleHero",
+      "name": "Article Hero",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "word1": {
+          "type": "Text",
+          "config": {
+            "label": "word1",
+            "placeholder": ""
+          }
+        },
+        "word2": {
+          "type": "Text",
+          "config": {
+            "label": "word2",
+            "placeholder": ""
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "subtitle",
+            "placeholder": "Subtitle"
+          }
+        },
+        "cta": {
+          "type": "Link",
+          "config": {
+            "label": "CTA",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

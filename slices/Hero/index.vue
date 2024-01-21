@@ -121,4 +121,26 @@ const documents = computed(() => {
       </article>
     </footer>
   </section>
+  <section
+    v-else-if="slice.variation === 'articleHero'"
+    class="slice gap-8"
+  >
+    <FancyHeading
+      v-if="slice.primary.word1 || slice.primary.word2"
+      :word1="slice.primary.word1"
+      :word2="slice.primary.word2"
+    />
+    <p
+      v-if="slice.primary.subtitle"
+      class="h2"
+    >
+      {{ slice.primary.subtitle }}
+    </p>
+    <PrismicLink
+      :field="slice.primary.cta"
+      class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+    >
+      {{ slice.primary.cta_label ?? slice.primary.cta.url.replace('https://', '').replace('www.', '') }}
+    </PrismicLink>
+  </section>
 </template>

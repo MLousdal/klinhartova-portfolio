@@ -326,6 +326,16 @@ export interface HeroSliceArticleHeroPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta: prismic.LinkField;
+
+  /**
+   * CTA label field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.cta_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_label: prismic.KeyTextField;
 }
 
 /**

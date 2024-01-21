@@ -58,6 +58,34 @@
             }
           }
         }
+      },
+      "role": {
+        "type": "Text",
+        "config": {
+          "label": "Role",
+          "placeholder": ""
+        }
+      },
+      "duration": {
+        "type": "Text",
+        "config": {
+          "label": "Duration",
+          "placeholder": ""
+        }
+      },
+      "tools": {
+        "type": "Text",
+        "config": {
+          "label": "Tools",
+          "placeholder": ""
+        }
+      },
+      "platform": {
+        "type": "Text",
+        "config": {
+          "label": "Platform",
+          "placeholder": ""
+        }
       }
     },
     "SEO & Metadata": {

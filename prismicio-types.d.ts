@@ -63,7 +63,51 @@ interface ArticleDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<ArticleDocumentDataSlicesSlice> /**
+  slices: prismic.SliceZone<ArticleDocumentDataSlicesSlice>;
+
+  /**
+   * Role field in *Article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.role
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  role: prismic.KeyTextField;
+
+  /**
+   * Duration field in *Article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.duration
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  duration: prismic.KeyTextField;
+
+  /**
+   * Tools field in *Article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.tools
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tools: prismic.KeyTextField;
+
+  /**
+   * Platform field in *Article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.platform
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  platform: prismic.KeyTextField /**
    * Meta Description field in *Article*
    *
    * - **Field Type**: Text
@@ -163,12 +207,12 @@ export interface HeroSliceDefaultPrimary {
   /**
    * headline field in *Hero → Primary*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: Headline
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
    * - **API ID Path**: hero.primary.headline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  headline: prismic.KeyTextField;
+  headline: prismic.RichTextField;
 
   /**
    * firstName field in *Hero → Primary*
@@ -189,16 +233,6 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   lastname: prismic.KeyTextField;
-
-  /**
-   * skills field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.skills
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  skills: prismic.RichTextField;
 }
 
 /**
@@ -206,24 +240,34 @@ export interface HeroSliceDefaultPrimary {
  */
 export interface HeroSliceDefaultItem {
   /**
-   * contactme field in *Hero → Items*
+   * contact field in *Hero → Items*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.items[].contactme
+   * - **API ID Path**: hero.items[].contact
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  contactme: prismic.LinkField;
+  contact: prismic.LinkField;
 
   /**
-   * documents field in *Hero → Items*
+   * document field in *Hero → Items*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Link to Media
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.items[].documents
+   * - **API ID Path**: hero.items[].document
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  documents: prismic.LinkField;
+  document: prismic.LinkToMediaField;
+
+  /**
+   * skills field in *Hero → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.items[].skills
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  skills: prismic.KeyTextField;
 }
 
 /**
@@ -237,64 +281,6 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<HeroSliceDefaultPrimary>,
   Simplify<HeroSliceDefaultItem>
->;
-
-/**
- * Primary content in *Hero → Primary*
- */
-export interface HeroSliceCaseHeroPrimary {
-  /**
-   * Role field in *Hero → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.role
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  role: prismic.KeyTextField;
-
-  /**
-   * Duration field in *Hero → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.duration
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  duration: prismic.KeyTextField;
-
-  /**
-   * Tools field in *Hero → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.tools
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  tools: prismic.KeyTextField;
-
-  /**
-   * Platform field in *Hero → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.platform
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  platform: prismic.KeyTextField;
-}
-
-/**
- * Case Hero variation for Hero Slice
- *
- * - **API ID**: `caseHero`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroSliceCaseHero = prismic.SharedSliceVariation<
-  "caseHero",
-  Simplify<HeroSliceCaseHeroPrimary>,
-  never
 >;
 
 /**
@@ -358,10 +344,7 @@ export type HeroSliceArticleHero = prismic.SharedSliceVariation<
 /**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation =
-  | HeroSliceDefault
-  | HeroSliceCaseHero
-  | HeroSliceArticleHero;
+type HeroSliceVariation = HeroSliceDefault | HeroSliceArticleHero;
 
 /**
  * Hero Shared Slice
@@ -479,11 +462,9 @@ declare module "@prismicio/client" {
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceDefaultItem,
-      HeroSliceCaseHeroPrimary,
       HeroSliceArticleHeroPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
-      HeroSliceCaseHero,
       HeroSliceArticleHero,
       ImageSlice,
       ImageSliceDefaultPrimary,

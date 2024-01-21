@@ -1,8 +1,6 @@
-import { repositoryName } from './slicemachine.config.json'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: true,
+  devtools: false,
 
   app: {
     head: {
@@ -20,15 +18,29 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/prismic'],
-
+  modules: ['@nuxtjs/prismic',
+    "@nuxtjs/robots",
+    "nuxt-simple-sitemap",
+    "@nuxtjs/google-fonts",
+    "nuxt-jsonld",
+    "nuxt-og-image",
+    "@nuxtjs/tailwindcss"],
+  googleFonts: {
+    families: {
+      Montserrat: [300],
+      MuseoModerno: [700]
+    }
+  },
+  tailwindcss: {
+    viewer: false
+  },
   prismic: {
     endpoint: 'klinhartova-portfolio',
     preview: '/api/preview',
     clientConfig: {
       routes: [
         {
-          type: 'page',
+          type: 'article',
           path: '/:uid',
         },
         {

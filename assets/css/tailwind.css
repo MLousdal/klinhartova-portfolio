@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply scroll-smooth motion-reduce:scroll-auto;
+  }
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    @apply font-serif text-primary-400;
+  }
+
+  a:not(.absolute):hover,
+  a:not(.absolute):focus {
+    @apply outline-none;
+  }
+  a:hover,
+  a:focus {
+    @apply underline underline-offset-2 outline-offset-8 decoration-primary-400;
+  }
+
+  strong {
+    @apply font-serif text-primary-400;
+  }
+
+  em:not(.prose :where(em):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+    @apply text-primary-400;
+  }
+
+  .section {
+    padding: 7.5vh 2.5vw;
+    height: 100dvh;
+  }
+
+  .hero {
+    @apply top-0 bottom-0 left-0 z-10 lg:fixed flex flex-col justify-between section lg:w-1/2;
+  }
+}

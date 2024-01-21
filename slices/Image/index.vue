@@ -14,10 +14,7 @@ defineProps(
 </script>
 
 <template>
-  <section
-    :data-slice-type="slice.slice_type"
-    :data-slice-variation="slice.variation"
-  >
-    Placeholder component for image (variation: {{ slice.variation }}) Slices
+  <section class="section min-h-[100vh] h-auto grid place-content-center">
+    <PrismicImage :field="slice.primary.image" />
   </section>
 </template>

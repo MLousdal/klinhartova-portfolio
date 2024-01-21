@@ -9,23 +9,10 @@ defineProps(getSliceComponentProps<Content.RichTextSlice>(
 </script>
 
 <template>
-  <section>
+  <section class="section min-h-[100vh] h-auto grid place-content-center">
     <PrismicRichText
       :field="slice.primary.content"
-      class="richtext"
+      class="prose"
     />
   </section>
 </template>
-
-<style scoped>
-section:deep(.richtext) {
-  max-width: 600px;
-  margin: 6em auto;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-section:deep(.richtext .codespan) {
-  font-family: monospace;
-}
-</style>

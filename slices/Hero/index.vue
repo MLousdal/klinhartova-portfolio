@@ -1,194 +1,124 @@
 <script setup lang="ts">
-import { type Content, isFilled } from "@prismicio/client";
-
-defineProps(
+import { type Content } from "@prismicio/client";
+import { computed } from 'vue'
+const props = defineProps(
   getSliceComponentProps<Content.HeroSlice>([
     "slice",
     "index",
     "slices",
     "context",
-  ]),
+  ])
 );
+
+const skills = computed(() => {
+  if(!props.slice.items && !props.slice.items.length) return null;
+  const itemsWithSkills = props.slice.items.filter(item => item.skills && item.skills.length);
+  return itemsWithSkills.map(item => item.skills);
+});
+
+const contacts = computed(() => {
+  if(!props.slice.items && !props.slice.items.length) return null;
+  const itemsWithSkills = props.slice.items.filter(item => item.contact);
+  return itemsWithSkills.map(item => item.contact);
+});
+
+const documents = computed(() => {
+  if(!props.slice.items && !props.slice.items.length) return null;
+  const itemsWithSkills = props.slice.items.filter(item => item.document);
+  return itemsWithSkills.map(item => item.document);
+});
 </script>
 
 <template>
   <section
-    :data-slice-type="slice.slice_type"
-    :data-slice-variation="slice.variation"
-    class="es-bounded es-fullpage-hero"
+    v-if="slice.variation === 'default'"
+    class="hero"
   >
-    <div
-      class="es-fullpage-hero__content"
-      :class="
-        slice.variation === 'imageRight'
-          ? 'es-fullpage-hero__image--right'
-          : 'es-fullpage-hero__image--left'
-      "
-    >
-      <div>
-        <PrismicImage
-          v-if="isFilled.image(slice.primary.image)"
-          :field="slice.primary.image"
-          class="es-fullpage-hero__image"
-        />
-      </div>
-      <div class="es-fullpage-hero__content-right">
-        <div class="es-fullpage-hero__content__intro">
-          <p
-            v-if="isFilled.keyText(slice.primary.eyebrowHeadline)"
-            class="es-fullpage-hero__content__intro__eyebrow"
-          >
-            {{ slice.primary.eyebrowHeadline }}
-          </p>
-          <div
-            v-if="isFilled.richText(slice.primary.title)"
-            class="es-fullpage-hero__content__intro__headline"
-          >
-            <PrismicRichText :field="slice.primary.title" />
-          </div>
-          <div
-            v-if="isFilled.richText(slice.primary.description)"
-            class="es-fullpage-hero__content__intro__description"
-          >
-            <PrismicRichText :field="slice.primary.description" />
-          </div>
-          <PrismicLink
-            v-if="isFilled.link(slice.primary.callToActionLink)"
-            class="es-call-to-action__link"
-            :field="slice.primary.callToActionLink"
-          >
-            {{ slice.primary.callToActionLabel || "Learn more…" }}
-          </PrismicLink>
-        </div>
-      </div>
-    </div>
+    <FancyHeading
+      :word1="slice.primary.firstname"
+      :word2="slice.primary.lastname"
+      center
+    />
+    <header v-if="slice.primary.headline">
+      <PrismicRichText
+        :field="slice.primary.headline"
+      />
+    </header>
+    <footer class="flex flex-col items-start gap-8 lg:flex-row">
+      <article
+        v-if="skills"
+        class="inline-flex flex-col"
+      >
+        <h2 class="text-lg">
+          skills
+        </h2>
+        <p
+          class="leading-normal"
+        >
+          <ul class="columns-2">
+            <li
+              v-for="(skill, index) in skills"
+              :key="index"
+            >
+              {{ skill }}
+            </li>
+          </ul>
+        </p>
+      </article>
+      <article
+        v-if="contacts"
+        class="flex flex-col"
+      >
+        <h2 class="text-lg">
+          contact me
+        </h2>
+        <p
+          class="leading-normal"
+        >
+          <ul class="list-none">
+            <template
+              v-for="(contact, index) in contacts"
+              :key="index"
+            >
+              <li v-if="contact.url">
+                <PrismicLink
+                  :field="contact"
+                  target="_blank"
+                >
+                  {{ contact.url.replace('https://', '').replace('www.', '').replace('mailto:', '') }}
+                </PrismicLink>
+              </li>
+            </template>
+          </ul>
+        </p>
+        <p class="leading-normal" />
+      </article>
+      <article 
+        v-if="documents"
+        class="flex flex-col"
+      >
+        <h2 class="text-lg">
+          documents
+        </h2>
+        <p
+          class="leading-normal"
+        >
+          <ul class="list-none">
+            <template
+              v-for="(document, index) in documents"
+              :key="index"
+            >
+              <li
+                v-if="document.url"
+              >
+                <PrismicLink :field="document">
+                  {{ document.name }}
+                </PrismicLink>
+              </li>
+            </template>
+          </ul>
+        </p>
+      </article>
+    </footer>
   </section>
 </template>
-
-<style>
-.es-bounded {
-  margin: 0px;
-  min-width: 0px;
-  position: relative;
-}
-
-.es-fullpage-hero {
-  font-family: system-ui, sans-serif;
-  background-color: #fff;
-  color: #333;
-}
-
-.es-fullpage-hero__image {
-  max-width: 100%;
-  height: auto;
-  align-self: center;
-}
-
-.es-fullpage-hero__image--left > div:first-child {
-  order: 1;
-}
-
-.es-fullpage-hero__image--left > div:nth-child(2) {
-  order: 2;
-}
-
-.es-fullpage-hero__image--right > div:first-child {
-  order: 2;
-}
-
-.es-fullpage-hero__image--right > div:nth-child(2) {
-  order: 1;
-}
-
-.es-fullpage-hero__content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.es-fullpage-hero__content-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 1.5rem;
-}
-
-@media (min-width: 1080px) {
-  .es-fullpage-hero__content {
-    flex-direction: row;
-  }
-
-  .es-fullpage-hero__content > div {
-    width: 50%;
-  }
-}
-
-.es-fullpage-hero__content__intro {
-  display: grid;
-  gap: 1rem;
-}
-
-.es-fullpage-hero__content__intro__eyebrow {
-  color: #47c1af;
-  font-size: 1.15rem;
-  font-weight: 500;
-  margin: 0;
-}
-
-.es-fullpage-hero__content__intro__headline {
-  font-size: 1.625rem;
-  font-weight: 700;
-}
-
-.es-fullpage-hero__content__intro__headline * {
-  margin: 0;
-}
-
-@media (min-width: 640px) {
-  .es-fullpage-hero__content__intro__headline {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .es-fullpage-hero__content__intro__headline {
-    font-size: 2.5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .es-fullpage-hero__content__intro__headline {
-    font-size: 2.75rem;
-  }
-}
-
-.es-fullpage-hero__content__intro__description {
-  font-size: 1.15rem;
-  max-width: 38rem;
-}
-
-.es-fullpage-hero__content__intro__description > p {
-  margin: 0;
-}
-
-@media (min-width: 1200px) {
-  .es-fullpage-hero__content__intro__description {
-    font-size: 1.4rem;
-  }
-}
-
-.es-call-to-action__link {
-  justify-self: flex-start;
-  border-radius: 0.25rem;
-  font-size: 0.875rem;
-  line-height: 1.3;
-  padding: 1rem 2.625rem;
-  transition: background-color 100ms linear;
-  background-color: #16745f;
-  color: #fff;
-}
-
-.es-call-to-action__link:hover {
-  background-color: #0d5e4c;
-}
-</style>

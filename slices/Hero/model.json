@@ -13,10 +13,12 @@
       "imageUrl": "",
       "primary": {
         "headline": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "headline",
-            "placeholder": "Headline"
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong"
           }
         },
         "firstname": {
@@ -32,74 +34,34 @@
             "label": "lastName",
             "placeholder": ""
           }
-        },
-        "skills": {
-          "type": "StructuredText",
-          "config": {
-            "label": "skills",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
         }
       },
       "items": {
-        "contactme": {
+        "contact": {
           "type": "Link",
           "config": {
-            "label": "contactme",
+            "label": "contact",
             "placeholder": "",
+            "allowTargetBlank": true,
             "select": null
           }
         },
-        "documents": {
+        "document": {
           "type": "Link",
           "config": {
-            "label": "documents",
+            "label": "document",
             "placeholder": "",
-            "select": null
+            "select": "media"
+          }
+        },
+        "skills": {
+          "type": "Text",
+          "config": {
+            "label": "skills",
+            "placeholder": ""
           }
         }
       }
-    },
-    {
-      "id": "caseHero",
-      "name": "Case Hero",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "role": {
-          "type": "Text",
-          "config": {
-            "label": "Role",
-            "placeholder": ""
-          }
-        },
-        "duration": {
-          "type": "Text",
-          "config": {
-            "label": "Duration",
-            "placeholder": ""
-          }
-        },
-        "tools": {
-          "type": "Text",
-          "config": {
-            "label": "Tools",
-            "placeholder": ""
-          }
-        },
-        "platform": {
-          "type": "Text",
-          "config": {
-            "label": "Platform",
-            "placeholder": ""
-          }
-        }
-      },
-      "items": {}
     },
     {
       "id": "articleHero",

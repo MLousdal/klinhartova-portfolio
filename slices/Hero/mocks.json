@@ -14,18 +14,21 @@
 				"type": "Text"
 			},
 			"headline": {
-				"__TYPE__": "FieldContent",
-				"value": "each",
-				"type": "Text"
-			},
-			"skills": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Tempor enim voluptate laboris. Non duis laboris minim occaecat excepteur fugiat cupidatat magna ea adipisicing reprehenderit. Ad consequat ea et proident."
-						}
+							"text": "Esse irure reprehenderit aliqua adipisicing reprehenderit adipisicing qui aliquip velit non. ",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 25,
+									"end": 43
+								}
+							]
+						},
+						"direction": "ltr"
 					}
 				]
 			}
@@ -35,17 +38,29 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"contactme",
+						"skills",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "first"
+						}
+					],
+					[
+						"document",
 						{
 							"__TYPE__": "LinkContent",
 							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "http://google.com"
+								"id": "mock_Media_link",
+								"kind": "image/jpeg",
+								"name": "mock_name",
+								"url": "https://source.unsplash.com/daily",
+								"size": "0",
+								"__TYPE__": "FileLink"
 							}
 						}
 					],
 					[
-						"documents",
+						"contact",
 						{
 							"__TYPE__": "LinkContent",
 							"value": {
@@ -55,38 +70,191 @@
 						}
 					]
 				]
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "caseHero",
-		"primary": {
-			"role": {
-				"__TYPE__": "FieldContent",
-				"value": "detail",
-				"type": "Text"
 			},
-			"duration": {
-				"__TYPE__": "FieldContent",
-				"value": "visit",
-				"type": "Text"
-			},
-			"tools": {
-				"__TYPE__": "FieldContent",
-				"value": "depend",
-				"type": "Text"
-			},
-			"platform": {
-				"__TYPE__": "FieldContent",
-				"value": "north",
-				"type": "Text"
-			}
-		},
-		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
-				"value": []
+				"value": [
+					[
+						"skills",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "second"
+						}
+					],
+					[
+						"document",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"id": "mock_Media_link",
+								"kind": "image/jpeg",
+								"name": "mock_name",
+								"url": "https://source.unsplash.com/daily",
+								"size": "0",
+								"__TYPE__": "FileLink"
+							}
+						}
+					],
+					[
+						"contact",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://google.com"
+							}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"skills",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "third"
+						}
+					],
+					[
+						"document",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"id": "mock_Media_link",
+								"kind": "image/jpeg",
+								"name": "mock_name",
+								"url": "https://source.unsplash.com/daily",
+								"size": "0",
+								"__TYPE__": "FileLink"
+							}
+						}
+					],
+					[
+						"contact",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"skills",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "forth"
+						}
+					],
+					[
+						"document",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"id": "mock_Media_link",
+								"kind": "image/jpeg",
+								"name": "mock_name",
+								"url": "https://source.unsplash.com/daily",
+								"size": "0",
+								"__TYPE__": "FileLink"
+							}
+						}
+					],
+					[
+						"contact",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"skills",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "fifth"
+						}
+					],
+					[
+						"document",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"id": "mock_Media_link",
+								"kind": "image/jpeg",
+								"name": "mock_name",
+								"url": "https://source.unsplash.com/daily",
+								"size": "0",
+								"__TYPE__": "FileLink"
+							}
+						}
+					],
+					[
+						"contact",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://slicemachine.dev"
+							}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"skills",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "sixth"
+						}
+					],
+					[
+						"document",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"id": "mock_Media_link",
+								"kind": "image/jpeg",
+								"name": "mock_name",
+								"url": "https://source.unsplash.com/daily",
+								"size": "0",
+								"__TYPE__": "FileLink"
+							}
+						}
+					],
+					[
+						"contact",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://google.com"
+							}
+						}
+					]
+				]
 			}
 		]
 	},

@@ -9,7 +9,7 @@ defineProps(getSliceComponentProps<Content.RichTextSlice>(
 </script>
 
 <template>
-  <section class="section min-h-[100vh] h-auto grid place-content-center">
+  <section class="slice">
     <PrismicRichText
       :field="slice.primary.content"
       class="prose"

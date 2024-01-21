@@ -14,7 +14,7 @@ defineProps(
 </script>
 
 <template>
-  <section class="section min-h-[100vh] h-auto grid place-content-center">
+  <section class="slice">
     <PrismicImage :field="slice.primary.image" />
   </section>
 </template>

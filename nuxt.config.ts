@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: true,
   site: {
-    url: 'https://www.kristinalinhartova.com/',
+    url: 'https://klinhartova-portfolio.vercel.app/',
   },
   app: {
     head: {

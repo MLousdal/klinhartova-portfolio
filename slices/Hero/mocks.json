@@ -68,6 +68,22 @@
 								"url": "https://prismic.io"
 							}
 						}
+					],
+					[
+						"document_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "nervous",
+							"type": "Text"
+						}
+					],
+					[
+						"contact_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "won",
+							"type": "Text"
+						}
 					]
 				]
 			},
@@ -104,6 +120,22 @@
 								"__TYPE__": "ExternalLink",
 								"url": "http://google.com"
 							}
+						}
+					],
+					[
+						"document_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "pressure",
+							"type": "Text"
+						}
+					],
+					[
+						"contact_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "supper",
+							"type": "Text"
 						}
 					]
 				]
@@ -142,6 +174,22 @@
 								"url": "http://twitter.com"
 							}
 						}
+					],
+					[
+						"document_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "faster",
+							"type": "Text"
+						}
+					],
+					[
+						"contact_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "section",
+							"type": "Text"
+						}
 					]
 				]
 			},
@@ -178,6 +226,22 @@
 								"__TYPE__": "ExternalLink",
 								"url": "http://twitter.com"
 							}
+						}
+					],
+					[
+						"document_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "because",
+							"type": "Text"
+						}
+					],
+					[
+						"contact_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "practical",
+							"type": "Text"
 						}
 					]
 				]
@@ -216,6 +280,22 @@
 								"url": "https://slicemachine.dev"
 							}
 						}
+					],
+					[
+						"document_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "cloth",
+							"type": "Text"
+						}
+					],
+					[
+						"contact_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "nodded",
+							"type": "Text"
+						}
 					]
 				]
 			},
@@ -252,6 +332,22 @@
 								"__TYPE__": "ExternalLink",
 								"url": "http://google.com"
 							}
+						}
+					],
+					[
+						"document_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "men",
+							"type": "Text"
+						}
+					],
+					[
+						"contact_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "gun",
+							"type": "Text"
 						}
 					]
 				]

@@ -46,12 +46,26 @@
             "select": null
           }
         },
+        "contact_label": {
+          "type": "Text",
+          "config": {
+            "label": "contact label",
+            "placeholder": ""
+          }
+        },
         "document": {
           "type": "Link",
           "config": {
             "label": "document",
             "placeholder": "",
             "select": "media"
+          }
+        },
+        "document_label": {
+          "type": "Text",
+          "config": {
+            "label": "document label",
+            "placeholder": ""
           }
         },
         "skills": {

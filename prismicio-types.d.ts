@@ -250,6 +250,16 @@ export interface HeroSliceDefaultItem {
   contact: prismic.LinkField;
 
   /**
+   * contact label field in *Hero → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.items[].contact_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  contact_label: prismic.KeyTextField;
+
+  /**
    * document field in *Hero → Items*
    *
    * - **Field Type**: Link to Media
@@ -258,6 +268,16 @@ export interface HeroSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   document: prismic.LinkToMediaField;
+
+  /**
+   * document label field in *Hero → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.items[].document_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  document_label: prismic.KeyTextField;
 
   /**
    * skills field in *Hero → Items*

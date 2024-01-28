@@ -18,14 +18,24 @@ const skills = computed(() => {
 
 const contacts = computed(() => {
   if(!props.slice.items && !props.slice.items.length) return null;
-  const itemsWithSkills = props.slice.items.filter(item => item.contact);
-  return itemsWithSkills.map(item => item.contact);
+  const itemsWithContacts = props.slice.items.filter(item => item.contact);
+  return itemsWithContacts.map(item => {
+    return {
+      link: item.contact,
+      label: item.contact_label
+    };
+  });
 });
 
 const documents = computed(() => {
   if(!props.slice.items && !props.slice.items.length) return null;
-  const itemsWithSkills = props.slice.items.filter(item => item.document);
-  return itemsWithSkills.map(item => item.document);
+  const itemsWithDocuments = props.slice.items.filter(item => item.document);
+  return itemsWithDocuments.map(item => {
+    return {
+      link: item.document,
+      label: item.document_label
+    };
+  });
 });
 </script>
 
@@ -80,12 +90,12 @@ const documents = computed(() => {
               v-for="(contact, index) in contacts"
               :key="index"
             >
-              <li v-if="contact.url">
+              <li v-if="contact.link && contact.link.url">
                 <PrismicLink
-                  :field="contact"
+                  :field="contact.link"
                   target="_blank"
                 >
-                  {{ contact.url.replace('https://', '').replace('www.', '').replace('mailto:', '') }}
+                  {{ contact.label ?? contact.link.url }}
                 </PrismicLink>
               </li>
             </template>
@@ -109,10 +119,10 @@ const documents = computed(() => {
               :key="index"
             >
               <li
-                v-if="document.url"
+                v-if="document.link && document.link.url"
               >
-                <PrismicLink :field="document">
-                  {{ document.name }}
+                <PrismicLink :field="document.link">
+                  {{ document.label ?? document.name }}
                 </PrismicLink>
               </li>
             </template>
@@ -123,7 +133,7 @@ const documents = computed(() => {
   </section>
   <section
     v-else-if="slice.variation === 'articleHero'"
-    class="slice gap-8"
+    class="gap-8 slice"
   >
     <FancyHeading
       v-if="slice.primary.word1 || slice.primary.word2"

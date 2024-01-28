@@ -1,10 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: false,
-
+  devtools: true,
+  site: {
+    url: 'https://www.kristinalinhartova.com/',
+  },
   app: {
     head: {
-      title: 'Prismic + Nuxt Minimal Starter',
+      title: 'Kristina Linhartová - Portfolio',
       htmlAttrs: {
         lang: 'en',
       },
@@ -17,17 +19,15 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     }
   },
-
   modules: ['@nuxtjs/prismic',
-    "@nuxtjs/robots",
-    "nuxt-simple-sitemap",
     "@nuxtjs/google-fonts",
+    '@nuxtjs/sitemap',
     "nuxt-jsonld",
     "nuxt-og-image",
     "@nuxtjs/tailwindcss"],
   googleFonts: {
     families: {
-      Montserrat: [300],
+      Montserrat: [300, 600],
       MuseoModerno: [700]
     }
   },
@@ -50,5 +50,5 @@ export default defineNuxtConfig({
         },
       ]
     }
-  },
+  }
 })

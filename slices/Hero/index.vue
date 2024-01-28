@@ -10,6 +10,14 @@ const props = defineProps(
   ])
 );
 
+
+// Methods
+function cleanUrl(url: string) {
+  if(!url) return "";
+  return url.replace("https://", "").replace("www.", "");
+}
+
+// Computed
 const skills = computed(() => {
   if(!props.slice.items && !props.slice.items.length) return null;
   const itemsWithSkills = props.slice.items.filter(item => item.skills && item.skills.length);
@@ -101,7 +109,7 @@ const loopingStrings = computed(() => {
                   :field="contact.link"
                   target="_blank"
                 >
-                  {{ contact.label ?? contact.link.url }}
+                  {{ contact.label ?? cleanUrl(contact.link.url) }}
                 </PrismicLink>
               </li>
             </template>
@@ -153,10 +161,11 @@ const loopingStrings = computed(() => {
       {{ slice.primary.subtitle }}
     </p>
     <PrismicLink
+      v-if="slice.primary.cta && slice.primary.cta.url"
       :field="slice.primary.cta"
-      class="w-fit text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none  hover:no-underline"
+      class="btn"
     >
-      {{ slice.primary.cta_label ?? slice.primary.cta.url.replace('https://', '').replace('www.', '') }}
+      {{ slice.primary.cta_label ?? cleanUrl(slice.primary.cta.url) }}
     </PrismicLink>
   </section>
   <section

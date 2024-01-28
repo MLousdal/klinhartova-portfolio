@@ -22,20 +22,27 @@
     @apply font-serif text-primary-600;
   }
 
-  a:not(.absolute):hover,
-  a:not(.absolute):focus {
-    @apply outline-none;
+  a {
+    @apply underline-offset-2;
   }
+
   a:hover,
   a:focus {
-    @apply underline underline-offset-2 outline-offset-8 decoration-primary-600;
+    @apply underline outline-offset-8 decoration-primary-600;
+  }
+
+  .prose a {
+    @apply underline font-bold text-primary-600;
   }
 
   strong {
     @apply font-serif text-primary-600;
   }
 
-  em:not(.prose :where(em):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  em:not(
+      .prose
+        :where(em):not(:where([class~="not-prose"], [class~="not-prose"] *))
+    ) {
     @apply text-primary-600;
   }
 
@@ -50,5 +57,15 @@
 
   .slice {
     @apply section min-h-[100vh] h-auto grid place-content-center snap-start;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply w-fit text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none  hover:no-underline;
+  }
+
+  .link {
+    @apply flex items-center gap-2 text-xl text-black underline-offset-2 before:block before:w-8 before:border-b-2 before:border-black hover:underline hover:before:w-0 before:transition-all before:motion-reduce:transition-none hover:decoration-inherit;
   }
 }

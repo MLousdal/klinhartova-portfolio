@@ -34,8 +34,8 @@ export default {
       typography: {
         DEFAULT: {
           css: {
-            '--tw-prose-headings': colors.rose[400],
-            '--tw-prose-bold': colors.rose[400],
+            '--tw-prose-headings': colors.rose[600],
+            '--tw-prose-bold': colors.rose[600],
           },
         },
       },

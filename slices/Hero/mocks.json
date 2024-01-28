@@ -392,5 +392,43 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "aboutHero",
+		"primary": {
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Do commodo minim labore dolore labore anim veniam tempor proident esse excepteur. Laboris nulla anim sunt nisi aute deserunt qui sit nostrud cillum deserunt exercitation adipisicing tempor incididunt."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"looping_subtitle",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Deserunt deserunt ipsum eu incididunt laboris et irure proident non voluptate exercitation Lorem. Incididunt irure adipisicing amet et commodo occaecat qui elit dolor consequat do voluptate pariatur eiusmod anim. Aliquip aute aliquip reprehenderit tempor."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
 	}
 ]

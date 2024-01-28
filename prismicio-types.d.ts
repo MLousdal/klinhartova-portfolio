@@ -372,9 +372,55 @@ export type HeroSliceArticleHero = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceAboutHeroPrimary {
+  /**
+   * Content field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Hero → Items*
+ */
+export interface HeroSliceAboutHeroItem {
+  /**
+   * Looping subtitle field in *Hero → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.items[].looping_subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  looping_subtitle: prismic.RichTextField;
+}
+
+/**
+ * About Hero variation for Hero Slice
+ *
+ * - **API ID**: `aboutHero`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceAboutHero = prismic.SharedSliceVariation<
+  "aboutHero",
+  Simplify<HeroSliceAboutHeroPrimary>,
+  Simplify<HeroSliceAboutHeroItem>
+>;
+
+/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault | HeroSliceArticleHero;
+type HeroSliceVariation =
+  | HeroSliceDefault
+  | HeroSliceArticleHero
+  | HeroSliceAboutHero;
 
 /**
  * Hero Shared Slice
@@ -493,9 +539,12 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceDefaultItem,
       HeroSliceArticleHeroPrimary,
+      HeroSliceAboutHeroPrimary,
+      HeroSliceAboutHeroItem,
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceArticleHero,
+      HeroSliceAboutHero,
       ImageSlice,
       ImageSliceDefaultPrimary,
       ImageSliceVariation,

@@ -37,6 +37,12 @@ const documents = computed(() => {
     };
   });
 });
+
+const loopingStrings = computed(() => {
+  if(!props.slice.items && !props.slice.items.length) return null;
+  const itemsWithLoopingStrings = props.slice.items.filter(item => item.looping_subtitle);
+  return itemsWithLoopingStrings.map(item => item.looping_subtitle[0]);
+});
 </script>
 
 <template>
@@ -152,5 +158,16 @@ const documents = computed(() => {
     >
       {{ slice.primary.cta_label ?? slice.primary.cta.url.replace('https://', '').replace('www.', '') }}
     </PrismicLink>
+  </section>
+  <section
+    v-else-if="slice.variation === 'aboutHero'"
+    class="gap-8 slice"
+  >
+    <div class="prose-lg">
+      <PrismicRichText
+        :field="slice.primary.content"
+      />
+      <LoopingText :strings="loopingStrings" />
+    </div>
   </section>
 </template>

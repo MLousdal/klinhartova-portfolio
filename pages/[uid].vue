@@ -21,14 +21,14 @@ useHead({
     >
       <router-link
         to="/"
-        class="flex items-center gap-2 text-xl text-black underline-offset-2 before:block before:w-8 before:border-b-2 before:border-primary-400 hover:underline hover:before:w-0 before:transition-all before:motion-reduce:transition-none"
+        class="flex items-center gap-2 text-xl text-black underline-offset-2 before:block before:w-8 before:border-b-2 before:border-black hover:underline hover:before:w-0 before:transition-all before:motion-reduce:transition-none hover:decoration-inherit"
       >
         back
       </router-link>
-      <div class="relative overflow-hidden flex justify-center">
+      <div class="relative flex justify-center overflow-hidden">
         <prismic-image
           :field="page.data.primary_image"
-          class="object-cover aspect-4/3 max-w-prose rounded-md"
+          class="object-cover rounded-md aspect-4/3 max-w-prose"
         />
       </div>
       <footer class="flex flex-col items-start gap-8 lg:flex-row">
@@ -36,7 +36,7 @@ useHead({
           v-if="page.data.role"
           class="inline-flex flex-col"
         >
-          <p class="h2 text-lg">
+          <p class="text-lg text-black h2">
             role
           </p>
           <p
@@ -49,7 +49,7 @@ useHead({
           v-if="page.data.duration"
           class="inline-flex flex-col"
         >
-          <p class="h2 text-lg">
+          <p class="text-lg text-black h2">
             duration
           </p>
           <p
@@ -62,7 +62,7 @@ useHead({
           v-if="page.data.tools"
           class="inline-flex flex-col"
         >
-          <p class="h2 text-lg">
+          <p class="text-lg text-black h2">
             tools
           </p>
           <p
@@ -75,7 +75,7 @@ useHead({
           v-if="page.data.platform"
           class="inline-flex flex-col"
         >
-          <p class="h2 text-lg">
+          <p class="text-lg text-black h2">
             platform
           </p>
           <p

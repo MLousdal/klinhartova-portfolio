@@ -19,6 +19,7 @@
         v-if="link"
         :href="link"
         class="absolute inset-0"
+        :title="page"
       ><span class="invisible">{{ page }}</span></a>
     </div>
   </article>

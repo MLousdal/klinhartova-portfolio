@@ -19,7 +19,7 @@
   .h5,
   h6,
   .h6 {
-    @apply font-serif text-primary-400;
+    @apply font-serif text-primary-600;
   }
 
   a:not(.absolute):hover,
@@ -28,15 +28,15 @@
   }
   a:hover,
   a:focus {
-    @apply underline underline-offset-2 outline-offset-8 decoration-primary-400;
+    @apply underline underline-offset-2 outline-offset-8 decoration-primary-600;
   }
 
   strong {
-    @apply font-serif text-primary-400;
+    @apply font-serif text-primary-600;
   }
 
   em:not(.prose :where(em):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-    @apply text-primary-400;
+    @apply text-primary-600;
   }
 
   .section {

@@ -59,7 +59,7 @@ const loopingStrings = computed(() => {
 <template>
   <section
     v-if="slice.variation === 'default'"
-    class="hero"
+    class="items-center hero"
   >
     <header
       v-if="slice.primary.headline"

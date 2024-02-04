@@ -34,9 +34,17 @@ const props = defineProps({
 })
 
 const currentIndex = ref(0)
-setInterval(() => {
-  currentIndex.value = (currentIndex.value + 1) % props.strings.length
-}, 3000)
+
+onMounted(() => {
+  const interval = setInterval(() => {
+    currentIndex.value = (currentIndex.value + 1) % props.strings.length
+  }, 3000)
+
+  onBeforeUnmount(() => {
+    clearInterval(interval)
+  })
+})
+
 </script>
 
 <style>

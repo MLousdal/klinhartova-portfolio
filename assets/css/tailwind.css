@@ -52,7 +52,7 @@
   }
 
   .hero {
-    @apply top-0 bottom-0 left-0 z-10 lg:fixed flex flex-col justify-between section lg:w-1/2 items-center;
+    @apply top-0 bottom-0 left-0 z-10 lg:fixed flex flex-col justify-between section lg:w-1/2;
   }
 
   .slice {
@@ -68,4 +68,14 @@
   .link {
     @apply flex items-center gap-2 text-xl text-black underline-offset-2 before:block before:w-8 before:border-b-2 before:border-black hover:underline hover:before:w-0 before:transition-all before:motion-reduce:transition-none hover:decoration-inherit;
   }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
 }

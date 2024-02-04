@@ -1,6 +1,6 @@
 <template>
   <h1
-    :class="['text-4xl heading md:text-6xl xl:text-8xl py-9 md:py-16 xl:py-24', {'absolute -translate-x-1/2 -translate-y-1/2 lg:fixed left-1/2 lg:top-1/2 top-1/3': center}]"
+    :class="['text-4xl heading sm:text-6xl xl:text-8xl py-9 md:py-16 xl:py-24', {'lg:-translate-x-1/2 lg:-translate-y-1/2 lg:fixed left-1/2 lg:top-1/2 top-1/3': center}]"
     :style="`--offset:  max(0%, ${100 - offset}%)`"
   >
     <span

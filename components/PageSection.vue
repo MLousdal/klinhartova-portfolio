@@ -10,11 +10,12 @@
       >
         {{ page }}
       </h2>
-      <picture class="relative overflow-hidden rounded-md"><img
+      <picture class="relative overflow-hidden rounded-md aspect-4/3"><img
         :src="image"
         alt=""
-        class="object-cover transition duration-300 ease-out aspect-4/3 group-hover:scale-110 motion-reduce:transition-none"
-      ></picture>
+        class="object-cover transition duration-300 ease-out group-hover:scale-110 motion-reduce:transition-none"
+      >
+      </picture>
       <a
         v-if="link"
         :href="link"
@@ -29,23 +30,23 @@
 defineProps({
   color: {
     type: String,
-    default: 'black'
+    default: "black",
   },
   page: {
     type: String,
-    default: ''
+    default: "",
   },
   link: {
     type: String,
-    default: ''
+    default: "",
   },
   image: {
     type: String,
-    default: ''
+    default: "",
   },
   background: {
     type: String,
-    default: ''
-  }
-})
+    default: "",
+  },
+});
 </script>

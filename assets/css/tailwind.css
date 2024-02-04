@@ -52,7 +52,7 @@
   }
 
   .hero {
-    @apply top-0 bottom-0 left-0 z-10 lg:fixed flex flex-col justify-between section lg:w-1/2;
+    @apply top-0 bottom-0 left-0 z-10 lg:fixed flex flex-col justify-between section lg:w-1/2 items-center;
   }
 
   .slice {

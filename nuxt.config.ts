@@ -23,8 +23,6 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/prismic',
     "@nuxtjs/google-fonts",
     '@nuxtjs/sitemap',
-    "nuxt-jsonld",
-    "nuxt-og-image",
     "@nuxtjs/tailwindcss"],
   googleFonts: {
     families: {

@@ -19,19 +19,9 @@ useSeoMeta({
     home.value?.data.meta_title ?? prismic.asText(home.value?.data.title),
   description: home.value?.data.meta_description,
   ogDescription: home.value?.data.meta_description,
+  ogImage: home.value?.data.og_image.url,
   twitterCard: "summary_large_image",
   ogType: "website",
-});
-
-// defineOgImageComponent({
-//     component: 'Custom',
-//     title: home.value?.data.meta_title ?? prismic.asText(home.value?.data.title),
-//     description: home.value?.data.meta_description,
-//   });
-
-defineOgImageScreenshot({
-  // wait 2 seconds
-  delay: 2000,
 });
 </script>
 

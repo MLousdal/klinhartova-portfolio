@@ -19,7 +19,8 @@ useSeoMeta({
   ogTitle: page.value?.data.meta_title ?? page.value?.data?.title + ' | Kristina Linhartová',
   description: page.value?.data?.meta_description,
   ogDescription: page.value?.data?.meta_description,
-  twitterCard: 'summary_large_image',
+  ogImage: page.value?.data.og_image.url,
+    twitterCard: 'summary_large_image',
   ogType: 'website',
 })
 </script>

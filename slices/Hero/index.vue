@@ -68,10 +68,10 @@ const loopingStrings = computed(() => {
         :field="slice.primary.headline"
       />
     </header>
-    <footer class="flex flex-col items-start gap-8 lg:flex-row">
+    <footer class="grid grid-cols-1 gap-4 sm:grid-cols-2 2xl:grid-cols-3 lg:gap-6 xl:gap-8">
       <article
         v-if="skills"
-        class="inline-flex flex-col"
+        class="sm:col-span-2 2xl:col-span-1"
       >
         <h2 class="text-lg">
           skills
@@ -91,7 +91,6 @@ const loopingStrings = computed(() => {
       </article>
       <article
         v-if="contacts"
-        class="flex flex-col"
       >
         <h2 class="text-lg">
           contact me
@@ -119,7 +118,6 @@ const loopingStrings = computed(() => {
       </article>
       <article 
         v-if="documents"
-        class="flex flex-col"
       >
         <h2 class="text-lg">
           documents

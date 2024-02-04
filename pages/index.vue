@@ -1,22 +1,27 @@
 <script setup lang="ts">
-import { components } from '~/slices'
+import { components } from "~/slices";
 
-const prismic = usePrismic()
-const { data: home } = useAsyncData('index', () =>
-  prismic.client.getByUID('page', 'home')
-)
-const { data: pages } = useAsyncData('articles', () =>
-  prismic.client.getAllByType("article")
-)
+const prismic = usePrismic();
+const { data: home } = useAsyncData("index", () =>
+  prismic.client.getByUID("page", "home")
+);
+const { data: pages } = useAsyncData("articles", () =>
+  prismic.client.getAllByType("article", {
+    orderings: {
+      field: "my.article.order",
+    },
+  })
+);
 
 useSeoMeta({
   title: home.value?.data.meta_title ?? prismic.asText(home.value?.data.title),
-  ogTitle: home.value?.data.meta_title ?? prismic.asText(home.value?.data.title),
+  ogTitle:
+    home.value?.data.meta_title ?? prismic.asText(home.value?.data.title),
   description: home.value?.data.meta_description,
   ogDescription: home.value?.data.meta_description,
-  twitterCard: 'summary_large_image',
-  ogType: 'website',
-})
+  twitterCard: "summary_large_image",
+  ogType: "website",
+});
 
 // defineOgImageComponent({
 //     component: 'Custom',
@@ -26,10 +31,9 @@ useSeoMeta({
 
 defineOgImageScreenshot({
   // wait 2 seconds
-  delay: 2000
-})
+  delay: 2000,
+});
 </script>
-
 
 <template>
   <div class="flex flex-col justify-end lg:flex-row">
